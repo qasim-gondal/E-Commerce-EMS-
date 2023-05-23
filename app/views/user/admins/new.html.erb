@@ -1,0 +1,14 @@
+<h1>Create Admin User</h1>
+<%= form_for :admin, url: user_admins_path do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div >
+    <%= form.submit 'Create Admin User' %>
+  </div>
+<% end %>
