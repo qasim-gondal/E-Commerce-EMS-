@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :user do
     resources :admins
+    resources :categories
   end
   root "home#index"
 

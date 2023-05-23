@@ -1,1 +1,10 @@
-
+<%= link_to 'Export Users as CSV', users_export_path(format: :csv) %>
+<% @categories.each do |category| %>
+  <p>
+    <%= link_to "Show this category", user_category_path(category)%>
+  </p>
+  <p>Name:</p>
+  <%= category.name %>
+<% end %><br>
+<br>
+<%= link_to "New category", new_user_category_path %>
