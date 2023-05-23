@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  namespace :user do
+    resources :admins
+  end
   root "home#index"
 
   get "users/export"
