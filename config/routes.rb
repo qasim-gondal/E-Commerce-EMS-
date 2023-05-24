@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
     resources :admins
     resources :categories
+    resources :users
   end
   root "home#index"
 

@@ -1,0 +1,12 @@
+<% @categories.each do |category| %>
+  <p>
+    <%= link_to "Actions", user_category_path(category)%>
+  </p>
+  <p>Name:</p>
+  <%= category.name %>
+<% end %><br>
+<br>
+<%= paginate @categories %>
+<%= link_to "New category", new_user_category_path %>
+</div>
+<br>

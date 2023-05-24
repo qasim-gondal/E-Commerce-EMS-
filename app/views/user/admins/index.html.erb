@@ -1,38 +1,8 @@
-<div><%= link_to 'Export Users as CSV', users_export_path(format: :csv) %>
-  <% @categories.each do |category| %>
-    <p>
-      <%= link_to "Actions", user_category_path(category)%>
-    </p>
-    <p>Name:</p>
-    <%= category.name %>
-  <% end %><br>
-  <br>
-  <%= paginate @categories %>
-  <%= link_to "New category", new_user_category_path %>
-</div>
+<h1>Categories</h1>
+<%= render 'user/admins/category' %>
 <br>
-<div>
-  <%= link_to 'Export CSV',export_csv_user_products_path(format: :csv) %>
-  <%= link_to 'Title', user_products_path(sort: 'title') %>
-  <%= link_to 'Price', user_products_path(sort: 'price') %>
-  <%= link_to 'Created Date', user_products_path(sort: 'created_at') %>
-  <%= form_tag user_products_path, method: :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: 'Search by title' %>
-    <%= submit_tag 'Search' %>
-  <% end %>
-  <%= link_to "New product", new_user_product_path %>
-  <% @products.each do |product| %>
-    <p>
-      <%= link_to "Actions", user_product_path(product)%>
-    </p>
-    <p>Title:</p>
-    <%= product.title%>
-    <p>Price:</p>
-    <%= product.price%>
-    <p>Description:</p>
-    <%= product.description%>
-    <p>status:</p>
-    <%= product.status%>
-  <% end %><br>
-  <%= paginate @products %>
-</div>
+<h1>Products</h1>
+<%= render 'user/admins/product' %>
+<%= render 'user/admins/userlist' %>
+<h1>Users</h1>
+<%= link_to 'View All Users', user_users_path, class: 'btn btn-primary' %>

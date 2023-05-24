@@ -2,6 +2,7 @@ class User::AdminsController < ApplicationController
   def index
     @categories = Category.all.page(params[:page])
     @products = Product.all.page(params[:page])
+    @users = User.all
   end
 
   def new

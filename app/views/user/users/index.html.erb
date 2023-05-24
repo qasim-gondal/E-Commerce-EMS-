@@ -1,0 +1,22 @@
+<div><%= link_to 'Export Users as CSV', users_export_path(format: :csv) %>
+  <%= form_tag user_users_path, method: :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: 'Search by title' %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+  <h1>Users</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Created_at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.email %></td>
+          <td><%= user.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
