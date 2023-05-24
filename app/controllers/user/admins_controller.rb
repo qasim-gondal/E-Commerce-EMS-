@@ -1,6 +1,7 @@
 class User::AdminsController < ApplicationController
   def index
     @categories = Category.all.page(params[:page])
+    @products = Product.all.page(params[:page])
   end
 
   def new
