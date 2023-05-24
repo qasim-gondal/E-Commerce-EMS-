@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   namespace :user do
+    resources :products do
+      collection do
+        get "export_csv"
+      end
+    end
     resources :admins
+    resources :categories
   end
   root "home#index"
 
