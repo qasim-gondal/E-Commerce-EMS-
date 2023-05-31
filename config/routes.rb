@@ -6,8 +6,10 @@ Rails.application.routes.draw do
         get "export_csv"
       end
     end
+    resources :coupons
     resources :admins
     resources :categories
+
     resources :users
   end
   root "home#index"

@@ -3,6 +3,7 @@ class User::AdminsController < ApplicationController
     @categories = Category.all.page(params[:page])
     @products = Product.all.page(params[:page])
     @users = User.all
+    @coupons = Coupon.all
   end
 
   def new

@@ -7,7 +7,8 @@
   <%= link_to 'Created Date', user_products_path(sort: 'created_at') %>
   <%= form_tag user_products_path, method: :get do %>
     <%= text_field_tag :search, params[:search], placeholder: 'Search by title' %>
-    <%= submit_tag 'Search' %>
+    <%= submit_tag 'Search' , class: "btn btn-outline-success"
+%>
   <% end %>
   <% @products.each do |product| %>
     <p>
