@@ -1,12 +1,24 @@
-<% @categories.each do |category| %>
-  <p>
-    <%= link_to "Actions", user_category_path(category)%>
-  </p>
-  <p>Name:</p>
-  <%= category.name %>
-<% end %><br>
-<br>
+<%= link_to "New category", new_user_category_path ,class:"btn btn-outline-warning" %>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %> </td>
+        <td>
+          <%= link_to "Edit", edit_user_category_path(category) ,class: "btn btn-success" %>
+        </td>
+        <td>
+          <%= button_to "Destroy", user_category_path(category), method: :delete,class:"btn btn-danger" %>
+        </td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
 <%= paginate @categories %>
-<%= link_to "New category", new_user_category_path %>
-</div>
-<br>

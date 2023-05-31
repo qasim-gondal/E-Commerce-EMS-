@@ -1,0 +1,5 @@
+<%= link_to 'New Coupon', new_user_coupon_path, class: 'btn btn-primary' %>
+<% @coupons.each do |coupon| %>
+  <%= coupon.name %>
+  <%= coupon.discount_value %>
+<% end %>

@@ -1,0 +1,17 @@
+<%= form_with(model: @coupon, url: user_coupons_path) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :discount_value %>
+    <%= form.number_field :discount_value %>
+  </div>
+  <div>
+    <%= form.label :product_ids, 'Associated Products' %>
+    <%= form.collection_select :product_ids, Product.all, :id, :title, multiple: true %>
+  </div>
+  <div>
+    <%= form.submit 'Create Coupon' %>
+  </div>
+<% end %>
