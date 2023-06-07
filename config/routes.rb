@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :categories
 
     resources :users
+    resources :orders
   end
   root "home#index"
 
